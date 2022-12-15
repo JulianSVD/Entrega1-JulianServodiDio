@@ -1,0 +1,22 @@
+{% extends "AppFamilia/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO DE FAMILIA</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+{{ error }}
+
+<!--action: con que vista voy a procesar lo que mandan-->
+<form action="{% url 'familiarFormulario' %}" method="POST">
+    
+    
+
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <input type="submit" value="Guardar Familia"> {% csrf_token %}
+{% endblock %}

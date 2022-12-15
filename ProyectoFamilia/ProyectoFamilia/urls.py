@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AppFamilia.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("familiar/", familiar),
-    path("mostrarFamiliar", mostrarFamiliar)
+    #path("familiar/", familiar),
+    path("direcciones/", direcciones, name="direcciones" ),
+    path("direccionFormulario/", direccionFormulario, name="direccionFormulario"),
+    path("familiarFormulario/", familiarFormulario, name="familiarFormulario" ),
+    path("puestoFormulario/", puestoFormulario, name="puestoFormulario" ),
+    path("", inicio),
 ]

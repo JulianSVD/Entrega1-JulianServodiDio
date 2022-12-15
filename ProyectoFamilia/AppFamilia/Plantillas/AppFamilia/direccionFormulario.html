@@ -1,0 +1,27 @@
+{% extends "AppFamilia/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO DE DIRECCION</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+{{ error }}
+
+<!--action: con que vista voy a procesar lo que mandan-->
+<form action="{% url 'direccionFormulario' %}" method="POST"> 
+
+
+    <!--   Metodo usado antes de API FORM DJANGO 
+    <p>Calle: <input type="text" name="calle"> </p>
+    <p>numero: <input type="number" name="numero"> </p>
+-->
+    
+
+    <table>
+        {{ form.as_table }}
+            <!--el form es una variable, la puedo llamar con juli, ESO SI, tengo que poner el mismo nombre en views.py-->
+    </table>
+    <input type="submit" value="Guardar Direccion"> {% csrf_token %}
+{% endblock %}
