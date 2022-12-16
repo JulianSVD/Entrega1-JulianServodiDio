@@ -1,0 +1,27 @@
+{% extends "AppFamilia/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Resultado de las busquedas de calles</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+{% if Direcciones %}
+
+<h2>LISTADO DE CALLES</h2>
+{% for numeros in Direcciones %} 
+
+<h3> {{ calle.nombre }} - {{ calle.numero }} </h3>
+
+{% endfor %}
+
+{% else %}
+
+<h2>NO HAY CALLES</h2>
+
+{% endif %}
+
+
+{% endblock %}

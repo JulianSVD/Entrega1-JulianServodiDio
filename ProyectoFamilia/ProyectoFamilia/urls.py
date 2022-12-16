@@ -24,5 +24,7 @@ urlpatterns = [
     path("direccionFormulario/", direccionFormulario, name="direccionFormulario"),
     path("familiarFormulario/", familiarFormulario, name="familiarFormulario" ),
     path("puestoFormulario/", puestoFormulario, name="puestoFormulario" ),
+    path("busquedaDireccion/", busquedaDireccion, name="busquedaDireccion" ),
+    path("buscar/", buscarCalles, name="buscar" ),
     path("", inicio),
 ]

@@ -1,0 +1,18 @@
+{% extends "AppFamilia/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">CALLES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+<!--action: con que vista voy a procesar lo que mandan-->
+<form action="{% url 'buscar' %}" method="GET">
+
+    <input type="number" name="Numero" id="Numero" placeholder="INSERTE numero">    
+    <input type="submit" value="buscar calle">
+    
+{% endblock %}

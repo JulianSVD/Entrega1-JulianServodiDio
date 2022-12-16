@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Direcciones, Familiar, Puesto
+from .models import *
 from django.http import HttpResponse
 from django.template import Template, Context, loader
 import datetime
@@ -106,3 +106,17 @@ def puestoFormulario(request):
     else:
         form: DireccionForm()
         return render(request, "AppFamilia/puestoFormulario.html", {"form": form})
+
+
+def busquedaDireccion(request):
+    return render(request, "AppFamilia/busquedaDireccion.html")
+
+def buscarCalles(request):
+
+    BusquedaCalles= request.GET["Numero"] #Esto es para mostrar las busquedas
+    if BusquedaCalles!="":
+        direct= Direcciones.objects.filter(numero__icontains = BusquedaCalles)
+        return render(request, "AppFamilia/resultadosBusqueda.html", {"Numero": direct})
+    else:
+        return render(request, "AppFamilia/busquedaDireccion.html", {"mensaje": "Ingresa algo capo"})
+#No logro hacer que me muestre calles
